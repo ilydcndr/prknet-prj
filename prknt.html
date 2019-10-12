@@ -55,13 +55,18 @@ td{
           for(j=0;j<7;j++){
               var td=document.createElement("td"); 
               var tryeekle=tr.appendChild(td);
+              var span=document.createElement("span");
+              var tdyeekle=td.appendChild(span);
+              span.style.display="inline-block";
+              span.style.marginTop="5em";
+              span.style.fontSize="0.7rem";
               if(k<30){ 
               var text=document.createTextNode(k+1);
-              var tdyeekle=td.appendChild(text);;
+              var spanaekle=span.appendChild(text);
               k++;
             }
             var text=document.createTextNode(" ");
-            var tdyeekle=td.appendChild(text);       
+            var spanaekle=span.appendChild(text);       
           }    
           document.getElementById("takvimtablo").appendChild(tr);
                                       
