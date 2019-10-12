@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<style>
+table,td,tr{
+    border: 1px solid black;
+    border-collapse: collapse; 
+}
+td{
+    height: 4em;
+    width: 4em;
+    text-align: center;
+}
+#gunler td{
+    height: 2em;
+}
+</style>
+
+<body>
+    <script>
+        $(document).ready(function(){
+    var olaylar=[
+        {
+           "title":"event 1",
+           "date":"2014/09/25"
+        },
+        {
+            "title":"event 2",
+            "date":"2014/09/26",
+            "enddate":"2014/09/29",
+        },
+        {
+            "title":"event 3",
+            "date":"2014/09/27",
+        },
+        {
+            "title":"event 4",
+            "date": "2014/09/30",
+        }
+    ];
+      
+      var i=0;
+      var j=0;
+      var k=0;
+
+      for(i=0;i<5;i++){        
+             var tr=document.createElement("tr");
+          for(j=0;j<7;j++){
+              var td=document.createElement("td"); 
+              var tryeekle=tr.appendChild(td);
+              if(k<30){ 
+              var text=document.createTextNode(k+1);
+              var tdyeekle=td.appendChild(text);;
+              k++;
+            }
+            var text=document.createTextNode(" ");
+            var tdyeekle=td.appendChild(text);       
+          }    
+          document.getElementById("takvimtablo").appendChild(tr);
+                                      
+      }  
+      
+          
+        })    
+
+           
+    
+    </script>
+      <table id="takvimtablo" style="background-color: yellowgreen;">
+      <tr id="gunler" style="background-color: lightblue;">
+          <td>Pazartesi</td>
+          <td>Salı</td>
+          <td>Çarşamba</td>
+          <td>Perşembe</td>
+          <td>Cuma</td>
+          <td>Cumartesi</td>
+          <td>Pazar</td>
+      </tr>
+    </table>
+     
+
+
+</body>
+</html>
