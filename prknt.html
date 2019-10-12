@@ -48,12 +48,13 @@ td{
 
     var OlaylarJson=JSON.stringify(olaylar);
     var OlaylarJsonAyır=JSON.parse(OlaylarJson);
-     
 
-      var i=0;
-      var j=0;
-      var k=0;
-      var m=0;
+    
+
+      var i=0; //*tr
+      var j=0; //*td
+      var k=0; //*gunler
+      var m=0; //*dizi
 
       for(i=0;i<5;i++){        
              var tr=document.createElement("tr");
@@ -61,14 +62,33 @@ td{
               var td=document.createElement("td"); 
               var tryeekle=tr.appendChild(td);
               var span=document.createElement("span");
+              var spans=document.getElementsByTagName("span")
               var tdyeekle=td.appendChild(span);
               span.style.display="inline-block";
               span.style.marginTop="5em";
               span.style.fontSize="0.7rem";
               if(k<30){ 
               var text=document.createTextNode(k+1);
-              var spanaekle=span.appendChild(text);
-              k++;}
+              var spanaekle=span.appendChild(text); 
+               for(m=0;m<OlaylarJsonAyır.length;m++){
+                    var tarih =OlaylarJsonAyır[m].date;
+                    var eventId=OlaylarJsonAyır[m].title
+                    var splitteddate=tarih.split("/");
+                    var gun=splitteddate[2];
+                    k++;
+                     if( k==gun ){                 
+                     var div=document.createElement("div");
+                     var text2=document.createTextNode(eventId);
+                     var diveekle=div.appendChild(text2);
+                    console.log(k);
+
+                           
+
+                        
+                     }                 
+                 }
+
+            }
             var text=document.createTextNode(" ");
             var spanaekle=span.appendChild(text);       
           }    
@@ -77,7 +97,7 @@ td{
         }    
 
     )    
-    
+   
     </script>
       <table id="takvimtablo" style="background-color: yellowgreen;">
       <tr id="gunler" style="background-color: lightblue;">
@@ -91,7 +111,5 @@ td{
       </tr>
     </table>
      
-
-
 </body>
 </html>
