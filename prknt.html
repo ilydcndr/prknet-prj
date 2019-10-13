@@ -45,17 +45,13 @@ td{
             "date": "2014/09/30",
         }
     ];
-
     var OlaylarJson=JSON.stringify(olaylar);
     var OlaylarJsonAyır=JSON.parse(OlaylarJson);
-
     
-
       var i=0; //*tr
       var j=0; //*td
       var k=0; //*gunler
       var m=0; //*dizi
-
       for(i=0;i<5;i++){        
              var tr=document.createElement("tr");
           for(j=0;j<7;j++){
@@ -75,19 +71,17 @@ td{
                     var eventId=OlaylarJsonAyır[m].title
                     var splitteddate=tarih.split("/");
                     var gun=splitteddate[2];
-                    k++;
                      if( k==gun ){                 
                      var div=document.createElement("div");
                      var text2=document.createTextNode(eventId);
-                     var diveekle=div.appendChild(text2);
-                    console.log(k);
-
-                           
-
-                        
+                     var diveekle=div.appendChild(text2); 
+                     var tdsec=document.getElementsByTagName("td");
+                     var secilmistdyeekle=tdsec[k].appendChild(div);
+                     var divsec=document.getElementsByTagName("div")            
+                     console.log(tdsec[k]);                       
                      }                 
                  }
-
+                 k++;
             }
             var text=document.createTextNode(" ");
             var spanaekle=span.appendChild(text);       
@@ -95,7 +89,6 @@ td{
           document.getElementById("takvimtablo").appendChild(tr);                                      
       }           
         }    
-
     )    
    
     </script>
