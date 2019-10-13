@@ -52,38 +52,44 @@ td{
       var j=0; //*td
       var k=0; //*gunler
       var m=0; //*dizi
-
+      var z;
       for(i=0;i<5;i++){               
              var tr=document.createElement("tr");
           for(j=0;j<7;j++){
               var td=document.createElement("td"); 
               var tryeekle=tr.appendChild(td);
               var span=document.createElement("span");
-              var spans=document.getElementsByTagName("span")
               var tdyeekle=td.appendChild(span);
               span.style.display="inline-block";
               span.style.marginTop="5em";
               span.style.fontSize="0.7rem";
               if(k<37){ 
               var text=document.createTextNode(k+1);
-              var spanaekle=span.appendChild(text); 
-               for(m=0;m<OlaylarJsonAyır.length;m++){
+              var spanaekle=span.appendChild(text);  
+              k++; 
+            }                            
+          }   
+          document.getElementById("takvimtablo").appendChild(tr);                                      
+      }  
+
+      
+                 for(m=0;m<OlaylarJsonAyır.length;m++){
                     var tarih =OlaylarJsonAyır[m].date;
                     var eventId=OlaylarJsonAyır[m].title;
                     var splitteddate=tarih.split("/");
                     var gun=splitteddate[2];
-
+                    var gunNumber=parseInt(gun);
                     if(Object.keys(OlaylarJsonAyır[m]).includes("enddate")==true){
                       var tarihend= OlaylarJsonAyır[m].enddate;
                       var splitteddateEnd=tarihend.split("/");
-                      var songun=splitteddateEnd[2];
-                      for(z=gun;songun>=gun;z++){
-                        var div=document.createElement("div");
-                        var text2=document.createTextNode(eventId);
-                        var diveekle=div.appendChild(text2); 
+                      var songun=splitteddateEnd[2]; 
+                      var songunNumber=parseInt(songun);
+                     for( z=gunNumber; songunNumber>=z ;z++){ 
+                        var songunolanDiv= document.createElement("div");
+                        var text3=document.createTextNode(eventId);
+                        var songunolanDiveEkleme=songunolanDiv.appendChild(text3);
                         var tdsec=document.getElementsByTagName("td");
-                        var secilmistdyeekle=tdsec[z].appendChild(div);
-                        var divsec=document.getElementsByTagName("div") 
+                        var ogununTdsineEkle=tdsec[z].appendChild(songunolanDiv);
                       }
                    }
                      if( (k-6)==gun ){                 
@@ -92,14 +98,9 @@ td{
                      var diveekle=div.appendChild(text2); 
                      var tdsec=document.getElementsByTagName("td");
                      var secilmistdyeekle=tdsec[k].appendChild(div);
-                     var divsec=document.getElementsByTagName("div") 
-                     }                                    
-                 }
-                 k++;
-            }                            
-          }   
-          document.getElementById("takvimtablo").appendChild(tr);                                      
-      }           
+                     }                                                      
+                 } 
+
         }    
     )    
    
