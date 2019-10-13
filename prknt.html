@@ -83,16 +83,16 @@ td{
                       var splitteddateEnd=tarihend.split("/");
                       var songun=splitteddateEnd[2]; 
                       var songunNumber=parseInt(songun);
-                     for( var z=gunNumber; songunNumber>=z ;z++){ 
+                     for( var z=gunNumber+1; songunNumber>=z ;z++){ 
                         var songunolanDiv= document.createElement("div");
                         var text3=document.createTextNode(eventId);
                         var songunolanDiveEkleme=songunolanDiv.appendChild(text3);
                         var tdsec=document.getElementsByTagName("td");
-                        var ogununTdsineEkle=tdsec[z].appendChild(songunolanDiv);
+                        var ogununTdsineEkle=tdsec[(z+6)].appendChild(songunolanDiv);
                       }
                    }
                         for(x=0;40>x;x++){
-                        if( x==gunNumber ){                 
+                        if( (x-6)==gunNumber ){                 
                          var div=document.createElement("div");
                          var text2=document.createTextNode(eventId);
                          var diveekle=div.appendChild(text2); 
