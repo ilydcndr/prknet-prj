@@ -26,3 +26,12 @@
                       var splitteddateEnd=tarihend.split("/");
                       var songun=splitteddateEnd[2];
                    }
+
+
+                   if( x==gunNumber ){                 
+                    var div=document.createElement("div");
+                    var text2=document.createTextNode(eventId);
+                    var diveekle=div.appendChild(text2); 
+                    var tdsec=document.getElementsByTagName("td");
+                    var secilmistdyeekle=tdsec[x].appendChild(div);
+                    } 
