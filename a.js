@@ -18,3 +18,11 @@
                      var diveekle=div.appendChild(eventtitle)
                      var tdyeekle =td.appendChild(eventdiv);
                      var tryeekle =tr.appendChild(td);  
+
+
+
+                     if(Object.keys(OlaylarJsonAyır[m]).includes("enddate")==true){
+                      var tarihend= OlaylarJsonAyır[m].enddate;
+                      var splitteddateEnd=tarihend.split("/");
+                      var songun=splitteddateEnd[2];
+                   }

@@ -52,7 +52,9 @@ td{
       var j=0; //*td
       var k=0; //*gunler
       var m=0; //*dizi
-      for(i=0;i<5;i++){        
+      var z=0;
+
+      for(i=0;i<5;i++){               
              var tr=document.createElement("tr");
           for(j=0;j<7;j++){
               var td=document.createElement("td"); 
@@ -63,29 +65,33 @@ td{
               span.style.display="inline-block";
               span.style.marginTop="5em";
               span.style.fontSize="0.7rem";
-              if(k<30){ 
+              if(k<37){ 
               var text=document.createTextNode(k+1);
               var spanaekle=span.appendChild(text); 
                for(m=0;m<OlaylarJsonAyır.length;m++){
                     var tarih =OlaylarJsonAyır[m].date;
-                    var eventId=OlaylarJsonAyır[m].title
+                    var eventId=OlaylarJsonAyır[m].title;
                     var splitteddate=tarih.split("/");
                     var gun=splitteddate[2];
-                     if( k==gun ){                 
+
+                    if(Object.keys(OlaylarJsonAyır[m]).includes("enddate")==true){
+                      var tarihend= OlaylarJsonAyır[m].enddate;
+                      var splitteddateEnd=tarihend.split("/");
+                      var songun=splitteddateEnd[2];
+                      
+                   }
+                     if( (k-6)==gun ){                 
                      var div=document.createElement("div");
                      var text2=document.createTextNode(eventId);
                      var diveekle=div.appendChild(text2); 
                      var tdsec=document.getElementsByTagName("td");
                      var secilmistdyeekle=tdsec[k].appendChild(div);
-                     var divsec=document.getElementsByTagName("div")            
-                     console.log(tdsec[k]);                       
-                     }                 
+                     var divsec=document.getElementsByTagName("div") 
+                     }                                    
                  }
                  k++;
-            }
-            var text=document.createTextNode(" ");
-            var spanaekle=span.appendChild(text);       
-          }    
+            }                            
+          }   
           document.getElementById("takvimtablo").appendChild(tr);                                      
       }           
         }    
