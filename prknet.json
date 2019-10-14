@@ -1,5 +1,1 @@
-window.onload=function(){
-    var span=document.createElement("span");
-    span.style.marginTop="10px";
-    span.appendChild(document.createTextNode("text"));
-}
+
