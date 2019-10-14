@@ -14,6 +14,9 @@ table,td,tr{
     border-collapse: collapse; 
 }
 td{
+    position: relative;
+}
+td{
     height: 4em;
     width: 4em;
     text-align: center;
@@ -59,7 +62,7 @@ td{
               var tryeekle=tr.appendChild(td);
               var span=document.createElement("span");
               var tdyeekle=td.appendChild(span);
-              span.style.display="inline-block";
+              span.style.display="block";
               span.style.marginTop="5em";
               span.style.fontSize="0.7rem";
               if(k<30){ 
@@ -70,7 +73,6 @@ td{
           }   
           document.getElementById("takvimtablo").appendChild(tr);                                      
       }  
-
            
                  for(m=0;m<OlaylarJsonAyır.length;m++){
                     var tarih =OlaylarJsonAyır[m].date;
@@ -83,21 +85,38 @@ td{
                       var splitteddateEnd=tarihend.split("/");
                       var songun=splitteddateEnd[2]; 
                       var songunNumber=parseInt(songun);
-                     for( var z=gunNumber+1; songunNumber>=z ;z++){ 
-                        var songunolanDiv= document.createElement("div");
-                        var text3=document.createTextNode(eventId);
-                        var songunolanDiveEkleme=songunolanDiv.appendChild(text3);
-                        var tdsec=document.getElementsByTagName("td");
-                        var ogununTdsineEkle=tdsec[(z+6)].appendChild(songunolanDiv);
+
+                      var text3=document.createTextNode(eventId);
+                      var songunolanDiv= document.createElement("div")
+                       var songunuolandiveekle=songunolanDiv.appendChild(text3);
+                 
+                      
+                     for(var z=gunNumber; songunNumber>=z ;z++){ 
+                      var songunolanDiv= document.createElement("div");
+                      var tdsec=document.getElementsByTagName("td"); 
+                      var ogununTdsineEkle=tdsec[(z+6)].appendChild(songunolanDiv);
+                        
+                        songunolanDiv.style.width="102%";
+                        songunolanDiv.style.height="25%";
+                        songunolanDiv.style.backgroundColor="pink"
+                        songunolanDiv.style.position="absolute";
+                        songunolanDiv.style.marginTop="-4em";
+
                       }
-                   }
+
+                   } 
                         for(x=0;40>x;x++){
-                        if( (x-6)==gunNumber ){                 
+                        if( (x-6)==gunNumber && Object.keys(OlaylarJsonAyır[m]).includes("enddate")==false){                 
                          var div=document.createElement("div");
                          var text2=document.createTextNode(eventId);
                          var diveekle=div.appendChild(text2); 
                          var tdsec=document.getElementsByTagName("td");
                          var secilmistdyeekle=tdsec[x].appendChild(div);
+                         div.style.position="absolute";
+                         div.style.backgroundColor="pink";
+                         div.style.width="98%";
+                        div.style.height="25%";
+                        div.style.marginTop="-2.5em";
                      }                                                                        
                  } 
             }   

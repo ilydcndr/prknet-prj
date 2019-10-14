@@ -35,3 +35,20 @@
                     var tdsec=document.getElementsByTagName("td");
                     var secilmistdyeekle=tdsec[x].appendChild(div);
                     } 
+
+
+                    var ogununTdsineEkle=tdsec[(gunNumber+6)].appendChild(songunolanDiv)
+
+                    
+                    for( var z=gunNumber+1; songunNumber>=z ;z++){ 
+                      var songunolanDiv= document.createElement("div");
+                      var tdsec=document.getElementsByTagName("td"); 
+                      var ogununTdsineEkle=tdsec[(z+6)].appendChild(songunolanDiv);
+
+                        songunolanDiv.style.width="100%";
+                        songunolanDiv.style.height="31%";
+                        songunolanDiv.style.backgroundColor="pink"
+                        songunolanDiv.style.margin="0px";
+                        songunolanDiv.style.
+                   
+                      }
