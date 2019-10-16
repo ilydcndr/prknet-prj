@@ -20,7 +20,7 @@
        }
     ];
     var OlaylarJson=JSON.stringify(olaylar);
-    var OlaylarJsonAyır=JSON.parse(OlaylarJson);
+    var OlaylarJsonAyir=JSON.parse(OlaylarJson);
     
      var i=0; //*tr
      var j=0; //*td
@@ -45,14 +45,14 @@
          document.getElementById("takvimtablo").appendChild(tr);                                      
      }  
           
-                for(m=0;m<OlaylarJsonAyır.length;m++){
-                   var tarih =OlaylarJsonAyır[m].date;
-                   var eventId=OlaylarJsonAyır[m].title;
+                for(m=0;m<OlaylarJsonAyir.length;m++){
+                   var tarih =OlaylarJsonAyir[m].date;
+                   var eventId=OlaylarJsonAyir[m].title;
                    var splitteddate=tarih.split("/");
                    var gun=splitteddate[2];
                    var gunNumber=parseInt(gun);
-                   if(Object.keys(OlaylarJsonAyır[m]).includes("enddate")==true){
-                     var tarihend= OlaylarJsonAyır[m].enddate;
+                   if(Object.keys(OlaylarJsonAyir[m]).includes("enddate")==true){
+                     var tarihend= OlaylarJsonAyir[m].enddate;
                      var splitteddateEnd=tarihend.split("/");
                      var songun=splitteddateEnd[2]; 
                      var songunNumber=parseInt(songun);
@@ -74,7 +74,7 @@
                      }
                   } 
                        for(x=0;40>x;x++){
-                       if( (x-6)==gunNumber && Object.keys(OlaylarJsonAyır[m]).includes("enddate")==false){                 
+                       if( (x-6)==gunNumber && Object.keys(OlaylarJsonAyir[m]).includes("enddate")==false){                 
                         var div=document.createElement("div");
                         var text2=document.createTextNode(eventId);
                         var diveekle=div.appendChild(text2); 
