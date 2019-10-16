@@ -11,9 +11,11 @@
     <script src="prknet.json"></script>
 </head>
 <style>
-table,td,tr{
+table,tr{
     border: 1px solid black;
-    border-collapse: collapse; 
+    border-collapse: collapse;
+    border-width: 0.1px 0.1px 0.1px 0;
+ 
 }
 td{
     position: relative;
@@ -22,6 +24,11 @@ td{
     height: 4em;
     width: 4em;
     text-align: center;
+    display:inline-block;
+    position:relative;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 0 0 0.1px;
 }
 #gunler td{
     height: 2em;
@@ -29,7 +36,7 @@ td{
 </style>
 
 <body>
-      <table id="takvimtablo" style="background-color: yellowgreen;">
+      <table id="takvimtablo" style="background-color: yellowgreen;overflow: hidden;">
       <tr id="gunler" style="background-color: lightblue;">
           <td>Pazartesi</td>
           <td>Salı</td>
